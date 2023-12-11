@@ -13,6 +13,6 @@ export const dummyCategory = [
     },
     {
         id: 4,
-        name: 'kakao'
+        name: 'kopi'
     },
 ]

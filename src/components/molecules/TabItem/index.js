@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text: (isFocused) => ({
-        color: isFocused ? colors.white : colors.secondary,
+        color: isFocused ? colors.black : colors.secondary,
         fontSize: 11,
         marginTop: 4
     }),
