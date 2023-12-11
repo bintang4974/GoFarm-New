@@ -2,7 +2,7 @@ import { HStack } from 'native-base';
 import React from 'react';
 import { CardProduct } from '../../atoms';
 
-const ListProduct = ({ product }) => {
+const ListProducts = ({ product }) => {
     return (
         <HStack flexWrap={"wrap"} justifyContent={"space-between"}>
             {product.map((item) => {
@@ -14,4 +14,4 @@ const ListProduct = ({ product }) => {
     )
 }
 
-export default ListProduct
+export default ListProducts

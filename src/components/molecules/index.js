@@ -1,7 +1,7 @@
 import BottomNavigator from "./BottomNavigator";
 import Header from "./Header";
 import ListCategory from "./ListCategory";
-import ListProduct from "./ListProduct";
+import ListProducts from "./ListProducts";
 import Banner from "./Banner";
 
-export { BottomNavigator, Header, ListCategory, ListProduct, Banner }
+export { BottomNavigator, Header, ListCategory, ListProducts, Banner }

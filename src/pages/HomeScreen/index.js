@@ -1,10 +1,9 @@
-import { Box, HStack, ScrollView, Text } from 'native-base';
-import React from 'react';
+import { Box, HStack, ScrollView } from 'native-base';
+import React, { useState } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from '../../utils';
-import { Banner, Gap, Header, ListCategory, ListProduct } from '../../components';
-import { useState } from 'react';
+import { Banner, Gap, Header, ListCategory, ListProducts } from '../../components';
 import { dummyCategory, dummyProduct } from '../../data';
+import { colors } from '../../utils';
 
 const HomeScreen = () => {
   const [category, setCategory] = useState(dummyCategory);
@@ -27,9 +26,9 @@ const HomeScreen = () => {
           <ListCategory category={category} />
         </Box>
         <Gap height={20} />
-        <Box backgroundColor={colors.primary} flex={1} borderTopRadius={14} p={5}>
+        <Box backgroundColor={colors.primary} flex={1} borderTopRadius={14} p={4}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <ListProduct product={product} />
+            <ListProducts product={product} />
           </ScrollView>
         </Box>
       </Box>

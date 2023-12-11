@@ -8,9 +8,9 @@ const CardProduct = ({ product }) => {
     return (
         <Box mx={4} my={5}>
             <TouchableOpacity style={styles.card}>
-                <Image source={product.image} alt='image' width={150} height={144} />
+                <Image source={product.image} alt='image' width={140} height={144} />
                 <Box backgroundColor={"#67D490"} p={2}>
-                    <Heading color={colors.white} fontSize={"lg"}>{product.name}</Heading>
+                    <Heading color={colors.white} fontSize={"lg"} textTransform={"capitalize"}>{product.name}</Heading>
                     <HStack space={2} justifyContent={"space-between"}>
                         <Text color={colors.white} fontWeight={"semibold"}>{product.price}</Text>
                         <Ionicons name="arrow-forward-outline" size={24} color={colors.white} />
