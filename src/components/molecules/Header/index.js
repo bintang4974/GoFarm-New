@@ -7,7 +7,7 @@ import { Button } from '../../atoms';
 
 const Header = () => {
     return (
-        <Box backgroundColor={colors.primary} height={125}>
+        <Box backgroundColor={colors.primary} height={90} borderBottomRadius={15}>
             <HStack space={2} mt={15} marginX={30} justifyContent={'space-between'}>
                 <HStack backgroundColor={colors.white} borderRadius={5} p={2} alignItems={"center"}>
                     <Ionicons name="search-outline" size={24} />
