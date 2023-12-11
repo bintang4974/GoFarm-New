@@ -1,4 +1,4 @@
-import { Box, Text } from 'native-base';
+import { Box, ScrollView, Text } from 'native-base';
 import React from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from '../../utils';
@@ -11,7 +11,7 @@ const HomeScreen = () => {
   const [product, setProduct] = useState(dummyProduct);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <Box backgroundColor={colors.white} flex={1}>
         <Header />
         <Gap height={20} />
@@ -20,7 +20,9 @@ const HomeScreen = () => {
         </Box>
         <Gap height={20} />
         <Box backgroundColor={colors.primary} flex={1} borderTopRadius={14} p={5}>
-          <ListProduct product={product} />
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <ListProduct product={product} />
+          </ScrollView>
         </Box>
       </Box>
     </SafeAreaView>
