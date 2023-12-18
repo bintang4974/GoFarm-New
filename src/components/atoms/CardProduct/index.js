@@ -4,10 +4,10 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { colors } from '../../../utils';
 
-const CardProduct = ({ product }) => {
+const CardProduct = ({ product, navigation }) => {
     return (
         <Box mx={4} my={5}>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ProductDetail', { product })}>
                 <Image source={product.image} alt='image' width={140} height={144} />
                 <Box backgroundColor={"#67D490"} p={2}>
                     <Heading color={colors.white} fontSize={"lg"} textTransform={"capitalize"}>{product.name}</Heading>

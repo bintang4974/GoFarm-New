@@ -5,7 +5,7 @@ import { Banner, Gap, Header, ListCategory, ListProducts } from '../../component
 import { dummyCategory, dummyProduct } from '../../data';
 import { colors } from '../../utils';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [category, setCategory] = useState(dummyCategory);
   const [product, setProduct] = useState(dummyProduct);
 
@@ -28,7 +28,7 @@ const HomeScreen = () => {
         <Gap height={20} />
         <Box backgroundColor={colors.primary} flex={1} borderTopRadius={14} p={4}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <ListProducts product={product} />
+            <ListProducts product={product} navigation={navigation} />
           </ScrollView>
         </Box>
       </Box>
