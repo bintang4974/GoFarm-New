@@ -14,23 +14,23 @@ const HomeScreen = ({ navigation }) => {
       <Box backgroundColor={colors.white} flex={1}>
         <Header />
         <Gap height={20} />
-        <HStack space={3}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <Banner />
-            <Banner />
-            <Banner />
-          </ScrollView>
-        </HStack>
-        <Gap height={20} />
-        <Box marginX={30}>
-          <ListCategory category={category} />
-        </Box>
-        <Gap height={20} />
-        <Box backgroundColor={colors.primary} flex={1} borderTopRadius={14} p={4}>
-          <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <HStack space={3}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              <Banner />
+              <Banner />
+              <Banner />
+            </ScrollView>
+          </HStack>
+          <Gap height={20} />
+          <Box marginX={30}>
+            <ListCategory category={category} />
+          </Box>
+          <Gap height={20} />
+          <Box backgroundColor={colors.primary} flex={1} borderTopRadius={14} p={4}>
             <ListProducts product={product} navigation={navigation} />
-          </ScrollView>
-        </Box>
+          </Box>
+        </ScrollView>
       </Box>
     </SafeAreaView>
   )
