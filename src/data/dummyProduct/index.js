@@ -10,7 +10,7 @@ export const dummyProduct = [
             name: 'kakao'
         },
         price: 10000,
-        weight: 1,
+        weight: ['1','2','3','4','5'],
         rating: 4.5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         ready: true
@@ -24,7 +24,7 @@ export const dummyProduct = [
             name: 'jamur'
         },
         price: 11000,
-        weight: 1,
+        weight: ['1','2','3','4','5'],
         rating: 4.5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         ready: true
@@ -38,7 +38,7 @@ export const dummyProduct = [
             name: 'gula'
         },
         price: 15000,
-        weight: 1,
+        weight: ['1','2','3','4','5'],
         rating: 4.5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         ready: true
@@ -52,7 +52,7 @@ export const dummyProduct = [
             name: 'kopi'
         },
         price: 12000,
-        weight: 1,
+        weight: ['1','2','3','4','5'],
         rating: 4.5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         ready: true
@@ -66,7 +66,7 @@ export const dummyProduct = [
             name: 'kopi'
         },
         price: 12000,
-        weight: 1,
+        weight: ['1','2','3','4','5'],
         rating: 4.5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         ready: true
@@ -80,7 +80,7 @@ export const dummyProduct = [
             name: 'kopi'
         },
         price: 12000,
-        weight: 1,
+        weight: ['1','2','3','4','5'],
         rating: 4.5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         ready: true

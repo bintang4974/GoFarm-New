@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { dummyMenu, dummyProfile } from '../../data';
 import { colors } from '../../utils';
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Gap, ListMenu } from '../../components';
+import { Button, Gap, Input, ListMenu, ProductSlider, Select } from '../../components';
 
 const ProductDetail = ({ route, navigation }) => {
     const [product, setProduct] = useState(route.params.product);
@@ -13,19 +13,25 @@ const ProductDetail = ({ route, navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Box backgroundColor={colors.white} flex={1}>
+                <ProductSlider image={image} />
                 <Box position={"absolute"} bottom={0} padding={4} height={"60%"} width={"100%"} backgroundColor={colors.primary} borderTopRadius={40}>
                     <HStack space={2} justifyContent={"space-between"} alignItems={"center"}>
-                        <Heading fontSize={"xl"}>{product.name}</Heading>
-                        <Text>{product.price}</Text>
+                        <Heading fontSize={"xl"} color={colors.white} textTransform={"capitalize"}>{product.name}</Heading>
+                        <Text color={colors.white} fontSize={14}>{product.price}</Text>
                     </HStack>
                     <Gap height={10} />
                     <HStack space={3} alignItems={"center"}>
-                        <Ionicons name="star-half-outline" size={24} color={colors.white} />
-                        <Text>{product.rating}</Text>
-                        <Text>(250 review)</Text>
+                        <Ionicons name="star-half-outline" size={20} color={"yellow"} />
+                        <Text color={colors.white}>{product.rating}</Text>
+                        <Text color={colors.white}>(250 review)</Text>
                     </HStack>
                     <Gap height={10} />
-                    <Text>{product.description}</Text>
+                    <Text color={colors.white}>{product.description}</Text>
+                    <Input label="qty" width={100} height={30} fontSize={16} />
+                    {/* <Select label="qty" width={100} height={30} fontSize={16} data={product.weight} /> */}
+                    <Box position={"absolute"} bottom={0} left={0} right={0} margin={5}>
+                        <Button type="textIcon" title="Add to cart" icon="cart-white" padding={15} fontSize={18} />
+                    </Box>
                 </Box>
             </Box>
         </SafeAreaView>

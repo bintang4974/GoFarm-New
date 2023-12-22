@@ -4,5 +4,6 @@ import ListCategory from "./ListCategory";
 import ListProducts from "./ListProducts";
 import Banner from "./Banner";
 import ListMenu from "./ListMenu";
+import ProductSlider from "./ProductSlider";
 
-export { BottomNavigator, Header, ListCategory, ListProducts, Banner, ListMenu }
+export { BottomNavigator, Header, ListCategory, ListProducts, Banner, ListMenu, ProductSlider }
