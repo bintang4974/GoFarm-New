@@ -1,10 +1,9 @@
-import { Box, HStack, Heading, Image, Text } from 'native-base';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { Box, HStack, Heading, Text } from 'native-base';
 import React, { useState } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { dummyMenu, dummyProfile } from '../../data';
+import { Button, Gap, Input, ProductSlider } from '../../components';
 import { colors } from '../../utils';
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Button, Gap, Input, ListMenu, ProductSlider, Select } from '../../components';
 
 const ProductDetail = ({ route, navigation }) => {
     const [product, setProduct] = useState(route.params.product);

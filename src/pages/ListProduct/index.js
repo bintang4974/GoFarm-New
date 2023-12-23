@@ -1,18 +1,18 @@
-import { Box, HStack, Heading, ScrollView } from 'native-base';
+import { Box, Heading, ScrollView } from 'native-base';
 import React, { useState } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Banner, Gap, Header, ListCategory, ListProducts } from '../../components';
+import { Gap, Header, ListProducts } from '../../components';
 import { dummyCategory, dummyProduct } from '../../data';
 import { colors } from '../../utils';
 
-const ListProduct = () => {
+const ListProduct = ({ navigation }) => {
   const [category, setCategory] = useState(dummyCategory);
   const [product, setProduct] = useState(dummyProduct);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Box backgroundColor={colors.white} flex={1}>
-        <Header />
+        <Header navigation={navigation} />
         <Gap height={10} />
         <Heading fontSize={"2xl"} p={2}>Whislist</Heading>
         <Gap height={10} />

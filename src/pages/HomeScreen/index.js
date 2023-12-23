@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Box backgroundColor={colors.white} flex={1}>
-        <Header />
+        <Header navigation={navigation} />
         <Gap height={20} />
         <ScrollView showsVerticalScrollIndicator={false}>
           <HStack space={3}>
