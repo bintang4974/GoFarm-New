@@ -40,7 +40,7 @@ const Router = () => {
                 <Stack.Screen
                     name="Cart"
                     component={Cart}
-                    options={{ headerShown: false }}
+                    // options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

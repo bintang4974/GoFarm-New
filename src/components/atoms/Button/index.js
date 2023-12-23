@@ -6,7 +6,7 @@ import { colors } from '../../../utils';
 import TextIcon from './TextIcon';
 
 const Button = (props) => {
-    const { icon, totalCart, padding, type, onPress } = props;
+    const { icon, totalCart, padding, type, onPress, background } = props;
 
     const Icon = () => {
         if (icon === 'cart') {
@@ -24,7 +24,7 @@ const Button = (props) => {
 
     return (
         <TouchableOpacity onPress={onPress}>
-            <Box backgroundColor={colors.white} p={padding} borderRadius={5}>
+            <Box backgroundColor={(background ? background : colors.white)} p={padding} borderRadius={5}>
                 <Icon />
                 {totalCart && (
                     <Box position={"absolute"} top={1} right={1} backgroundColor={"red.600"} borderRadius={3} padding={0.5}>
