@@ -6,5 +6,16 @@ import ProductDetail from "./ProductDetail";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
 import EditProfile from "./EditProfile";
+import History from "./History";
 
-export { SplashScreen, HomeScreen, ListProduct, Profile, ProductDetail, Cart, Checkout, EditProfile };
+export {
+    SplashScreen,
+    HomeScreen,
+    ListProduct,
+    Profile,
+    ProductDetail,
+    Cart,
+    Checkout,
+    EditProfile,
+    History
+};

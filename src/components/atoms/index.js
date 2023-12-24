@@ -6,5 +6,6 @@ import CardMenu from "./CardMenu";
 import Input from "./Input";
 import Select from "./Select";
 import CardCart from "./CardCart";
+import CardHistory from "./CardHistory";
 
-export { Button, CardCategory, Gap, CardProduct, CardMenu, Input, Select, CardCart }
+export { Button, CardCategory, Gap, CardProduct, CardMenu, Input, Select, CardCart, CardHistory }

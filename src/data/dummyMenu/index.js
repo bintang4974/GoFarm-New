@@ -19,12 +19,12 @@ export const dummyMenu = [
         id: 3,
         name: 'History',
         image: <Ionicons name="bookmark-outline" size={24} color={colors.primary} />,
-        pages: 'EditProfile',
+        pages: 'History',
     },
     {
         id: 4,
         name: 'Sign Out',
         image: <Ionicons name="log-out-outline" size={24} color={colors.primary} />,
-        pages: 'EditProfile',
+        pages: 'Signout',
     },
 ]
