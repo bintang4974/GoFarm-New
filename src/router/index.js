@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Cart, Checkout, EditProfile, History, HomeScreen, ListProduct, ProductDetail, Profile, SplashScreen } from '../pages';
+import { Cart, Checkout, EditProfile, History, HomeScreen, ListProduct, Login, ProductDetail, Profile, SplashScreen } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
 
@@ -21,7 +21,12 @@ const MainApp = () => {
 const Router = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='Splash'>
+            <Stack.Navigator initialRouteName='Login'>
+                <Stack.Screen
+                    name="Login"
+                    component={Login}
+                    options={{ headerShown: false }}
+                />
                 <Stack.Screen
                     name="Splash"
                     component={SplashScreen}

@@ -9,7 +9,7 @@ const EditProfile = () => {
     const [profile, setProfile] = useState(dummyProfile);
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        // <SafeAreaView style={{ flex: 1 }}>
             <Box backgroundColor={colors.white} flex={1} px={5} paddingTop={5}>
                 <Input label="Name" value={profile.name} />
                 <Input label="Email" value={profile.email} />
@@ -28,7 +28,7 @@ const EditProfile = () => {
                     <Button title="Submit" type="textIcon" icon="checkout" padding={10} fontColor={colors.white} fontSize={20} backgroundColor={colors.primary} />
                 </Box>
             </Box>
-        </SafeAreaView>
+        // </SafeAreaView>
     )
 }
 

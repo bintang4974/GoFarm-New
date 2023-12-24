@@ -7,6 +7,7 @@ import Cart from "./Cart";
 import Checkout from "./Checkout";
 import EditProfile from "./EditProfile";
 import History from "./History";
+import Login from "./Login";
 
 export {
     SplashScreen,
@@ -17,5 +18,6 @@ export {
     Cart,
     Checkout,
     EditProfile,
-    History
+    History,
+    Login
 };
