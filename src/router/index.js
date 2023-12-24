@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Cart, HomeScreen, ListProduct, ProductDetail, Profile, SplashScreen } from '../pages';
+import { Cart, Checkout, EditProfile, HomeScreen, ListProduct, ProductDetail, Profile, SplashScreen } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
 
@@ -40,6 +40,16 @@ const Router = () => {
                 <Stack.Screen
                     name="Cart"
                     component={Cart}
+                    // options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Checkout"
+                    component={Checkout}
+                    // options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="EditProfile"
+                    component={EditProfile}
                     // options={{ headerShown: false }}
                 />
             </Stack.Navigator>

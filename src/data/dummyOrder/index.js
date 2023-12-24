@@ -5,7 +5,7 @@ export const dummyOrder = [
         id: 1,
         orderDate: 'Sabtu, 23 Desember 2023',
         status: 'cart',
-        totalPrice: 500000,
+        totalPrice: 32000,
         weight: 1,
         orders: [
             {

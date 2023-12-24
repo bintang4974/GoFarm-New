@@ -2,7 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Box, HStack, Heading, Text } from 'native-base';
 import React, { useState } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Button, Gap, Input, ProductSlider } from '../../components';
+import { Button, Gap, Input, ProductSlider, Select } from '../../components';
 import { colors } from '../../utils';
 
 const ProductDetail = ({ route, navigation }) => {
@@ -27,7 +27,7 @@ const ProductDetail = ({ route, navigation }) => {
                     <Gap height={10} />
                     <Text color={colors.white}>{product.description}</Text>
                     <Input label="qty" width={100} height={30} fontSize={16} />
-                    {/* <Select label="qty" width={100} height={30} fontSize={16} data={product.weight} /> */}
+                    <Select label="qty" width={100} height={30} fontSize={16} data={product.weight} />
                     <Box position={"absolute"} bottom={0} left={0} right={0} margin={5}>
                         <Button type="textIcon" title="Add to cart" icon="cart-white" padding={15} fontSize={18} />
                     </Box>

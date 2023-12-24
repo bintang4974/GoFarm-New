@@ -5,7 +5,7 @@ import { dummyOrder } from '../../data';
 import { Button, ListCart } from '../../components';
 import { colors } from '../../utils';
 
-const Cart = () => {
+const Cart = ({ navigation }) => {
     const [order, setOrder] = useState(dummyOrder[0]);
 
     return (
@@ -17,7 +17,16 @@ const Cart = () => {
                         <Heading fontSize={"md"}>Total Price :</Heading>
                         <Heading fontSize={"md"}>Rp. {order.totalPrice}</Heading>
                     </HStack>
-                    <Button title="Checkout" type="textIcon" fontSize={18} padding={15} backgroundColor={colors.primary} fontColor={colors.white} icon="checkout" />
+                    <Button
+                        title="Checkout"
+                        type="textIcon"
+                        fontSize={18}
+                        padding={15}
+                        backgroundColor={colors.primary}
+                        fontColor={colors.white}
+                        icon="checkout"
+                        onPress={() => navigation.navigate('Checkout')}
+                    />
                 </Box>
             </Box>
         </SafeAreaView>

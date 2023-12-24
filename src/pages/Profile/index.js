@@ -5,7 +5,7 @@ import { dummyMenu, dummyProfile } from '../../data';
 import { colors } from '../../utils';
 import { ListMenu } from '../../components';
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const [profile, setProfile] = useState(dummyProfile);
   const [menu, setMenu] = useState(dummyMenu);
 
@@ -19,7 +19,7 @@ const Profile = () => {
             <Text color={colors.white}>{profile.telp}</Text>
             <Text color={colors.white}>{profile.address}</Text>
           </Box>
-          <ListMenu menu={menu} />
+          <ListMenu menu={menu} navigation={navigation} />
         </Box>
       </Box>
     </SafeAreaView>

@@ -2,11 +2,11 @@ import { Box, Text } from 'native-base';
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 
-const Input = ({width, height, fontSize, label}) => {
+const Input = ({width, height, fontSize, label, value}) => {
   return (
     <Box>
         <Text fontSize={(fontSize ? fontSize: 18)}>{label}</Text>
-        <TextInput style={styles.input(width, height, fontSize)} />
+        <TextInput style={styles.input(width, height, fontSize)} value={value} />
     </Box>
   )
 }

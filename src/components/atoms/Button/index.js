@@ -4,6 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { colors } from '../../../utils';
 import TextIcon from './TextIcon';
+import TextOnly from './TextOnly';
 
 const Button = (props) => {
     const { icon, totalCart, padding, type, onPress, background } = props;
@@ -20,6 +21,8 @@ const Button = (props) => {
 
     if (type === "textIcon") {
         return <TextIcon {...props} />
+    } else if(type === "text") {
+        return <TextOnly {...props} />
     }
 
     return (
