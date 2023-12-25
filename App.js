@@ -1,14 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SplashScreen } from './src/pages';
 import { NativeBaseProvider } from 'native-base';
+import { StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './src/redux/store';
 import Router from './src/router';
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <Router />
-    </NativeBaseProvider>
+    <Provider store={store}>
+      <NativeBaseProvider>
+        <Router />
+      </NativeBaseProvider>
+    </Provider>
   );
 }
 
