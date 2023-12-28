@@ -16,7 +16,7 @@ const HomeScreen = ({ navigation }) => {
 
   // initialize product from reducer
   const getProduct = useSelector((state) => state.product.product);
-  console.log('product: ', getProduct);
+  // console.log('product: ', getProduct);
 
   useEffect(() => {
     if(getProduct.length > 0) return
@@ -26,7 +26,7 @@ const HomeScreen = ({ navigation }) => {
     }
     fetchProducts();
   }, [])
-  console.log(getProduct)
+  // console.log(getProduct)
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
