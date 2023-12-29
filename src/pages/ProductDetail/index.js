@@ -152,12 +152,12 @@ const ProductDetail = ({ route, navigation }) => {
                             }}
                         >
                             <Box>
-                                <Text style={{ fontSize: 17, fontWeight: "600", color: "white" }}>{cart.length} items |  $ {total}</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "600", color: "white" }}>{cart.length} items |  Rp. {total}</Text>
                                 <Text style={{ fontSize: 15, fontWeight: "400", color: "white", marginVertical: 6 }}>extra charges might apply</Text>
                             </Box>
 
-                            <Pressable onPress={() => navigation.navigate("PickUp")}>
-                                <Text style={{ fontSize: 17, fontWeight: "600", color: "white" }}>Proceed to pickup</Text>
+                            <Pressable onPress={() => navigation.navigate("Cart")}>
+                                <Text style={{ fontSize: 17, fontWeight: "600", color: "white" }}>Proceed to cart</Text>
                             </Pressable>
                         </Pressable>
                     )}
