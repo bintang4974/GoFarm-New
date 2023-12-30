@@ -6,9 +6,12 @@ import { dummyCategory, dummyProduct } from '../../data';
 import { colors } from '../../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/ProductReducer';
+import { collection, getDoc, getDocs } from 'firebase/firestore';
+import { db } from '../../config/FIREBASE';
 
 const HomeScreen = ({ navigation }) => {
   const cart = useSelector((state) => state.cart.cart);
+  const [items, setItems] = useState([]);
   console.log('cart: ', cart);
   const [category, setCategory] = useState(dummyCategory);
   const [product, setProduct] = useState(dummyProduct);
@@ -19,14 +22,20 @@ const HomeScreen = ({ navigation }) => {
   // console.log('product: ', getProduct);
 
   useEffect(() => {
-    if(getProduct.length > 0) return
+    if (getProduct.length > 0) return
 
-    const fetchProducts = () => {
-      product.map((item) => dispatch(getProducts(item)));
+    const fetchProducts = async () => {
+      // product.map((item) => dispatch(getProducts(item)));
+      const colRef = collection(db, "products");
+      const docsSnap = await getDocs(colRef);
+      docsSnap.forEach((doc) => {
+        items.push(doc.data());
+      });
+      items?.map((item) => dispatch(getProducts(item)));
     }
     fetchProducts();
   }, [])
-  // console.log(getProduct)
+  console.log(getProduct);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

@@ -4,21 +4,21 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from '../../utils';
 import { Button, Gap, Input } from '../../components';
 import { Logo } from '../../assets';
-import { TouchableOpacity } from 'react-native';
+import { ActivityIndicator, TouchableOpacity } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/FIREBASE';
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [loading,setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        // setLoading(true);
+        setLoading(true);
         const unsubscribe = auth.onAuthStateChanged((authUser) => {
-            // if (!authUser) {
-            //     setLoading(false);
-            // }
+            if (!authUser) {
+                setLoading(false);
+            }
             if (authUser) {
                 navigation.replace("MainApp");
             }
@@ -37,25 +37,32 @@ const Login = ({ navigation }) => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Box backgroundColor={colors.primary} flex={1} justifyContent={"center"}>
-                <Box backgroundColor={colors.white} p={5} mx={8} borderRadius={20} shadow={5}>
-                    <HStack space={2} alignItems={"center"} justifyContent={"center"}>
-                        <Image source={Logo} height={50} width={50} alt='logo' />
-                        <Heading fontWeight={"bold"} size={"2xl"} color={colors.primary}>Login</Heading>
-                    </HStack>
-                    <Gap height={20} />
-                    <Input label="Email" value={email} onChangeText={(text) => setEmail(text)} />
-                    <Input label="Password" value={password} onChangeText={(text) => setPassword(text)} secureTextEntry />
-                    <Gap height={20} />
-                    <Box mx={10} shadow={5}>
-                        <Button title="Login" type="text" padding={10} onPress={login} />
-                    </Box>
-                    <Gap height={20} />
-                    <TouchableOpacity>
-                        <Text fontWeight={"semibold"} fontSize={"md"} color={colors.primary} textAlign={"center"} onPress={() => navigation.navigate('Register')}>Register Account?</Text>
-                    </TouchableOpacity>
+            {loading ? (
+                <Box>
+                    <Text>Loading</Text>
+                    <ActivityIndicator size={"large"} color={"red"} />
                 </Box>
-            </Box>
+            ) : (
+                <Box backgroundColor={colors.primary} flex={1} justifyContent={"center"}>
+                    <Box backgroundColor={colors.white} p={5} mx={8} borderRadius={20} shadow={5}>
+                        <HStack space={2} alignItems={"center"} justifyContent={"center"}>
+                            <Image source={Logo} height={50} width={50} alt='logo' />
+                            <Heading fontWeight={"bold"} size={"2xl"} color={colors.primary}>Login</Heading>
+                        </HStack>
+                        <Gap height={20} />
+                        <Input label="Email" value={email} onChangeText={(text) => setEmail(text)} />
+                        <Input label="Password" value={password} onChangeText={(text) => setPassword(text)} secureTextEntry />
+                        <Gap height={20} />
+                        <Box mx={10} shadow={5}>
+                            <Button title="Login" type="text" padding={10} onPress={login} />
+                        </Box>
+                        <Gap height={20} />
+                        <TouchableOpacity>
+                            <Text fontWeight={"semibold"} fontSize={"md"} color={colors.primary} textAlign={"center"} onPress={() => navigation.navigate('Register')}>Register Account?</Text>
+                        </TouchableOpacity>
+                    </Box>
+                </Box>
+            )}
         </SafeAreaView>
     )
 }
