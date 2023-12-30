@@ -1,14 +1,40 @@
 import { Box, HStack, Heading, Image, Text } from 'native-base';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from '../../utils';
 import { Button, Gap, Input } from '../../components';
 import { Logo } from '../../assets';
 import { TouchableOpacity } from 'react-native';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../config/FIREBASE';
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading,setLoading] = useState(false);
+
+    useEffect(() => {
+        // setLoading(true);
+        const unsubscribe = auth.onAuthStateChanged((authUser) => {
+            // if (!authUser) {
+            //     setLoading(false);
+            // }
+            if (authUser) {
+                navigation.replace("MainApp");
+            }
+        });
+
+        return unsubscribe;
+    }, [])
+
+    const login = () => {
+        signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            console.log("user credential", userCredential);
+            const user = userCredential.user;
+            console.log("user details", user)
+        })
+    }
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Box backgroundColor={colors.primary} flex={1} justifyContent={"center"}>
@@ -22,7 +48,7 @@ const Login = ({ navigation }) => {
                     <Input label="Password" value={password} onChangeText={(text) => setPassword(text)} secureTextEntry />
                     <Gap height={20} />
                     <Box mx={10} shadow={5}>
-                        <Button title="Login" type="text" padding={10} onPress={() => navigation.navigate('MainApp')} />
+                        <Button title="Login" type="text" padding={10} onPress={login} />
                     </Box>
                     <Gap height={20} />
                     <TouchableOpacity>
