@@ -8,6 +8,7 @@ import Checkout from "./Checkout";
 import EditProfile from "./EditProfile";
 import History from "./History";
 import Login from "./Login";
+import Register from "./Register"
 
 export {
     SplashScreen,
@@ -19,5 +20,6 @@ export {
     Checkout,
     EditProfile,
     History,
-    Login
+    Login,
+    Register
 };
