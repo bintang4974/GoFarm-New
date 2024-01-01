@@ -9,6 +9,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { decrementQuantity, incrementQuantity } from '../../redux/CartReducer';
 import { decrementQty, incrementQty } from '../../redux/ProductReducer';
 import { auth } from '../../config/FIREBASE';
+import { snapTransactions } from '../../midtrans/payment';
 
 const Cart = ({ navigation }) => {
     const cart = useSelector((state) => state.cart.cart);
@@ -18,7 +19,7 @@ const Cart = ({ navigation }) => {
     const date = new Date().getTime();
     const dispatch = useDispatch();
 
-    const payment = () => {
+    const payment = async () => {
         const data = {
             transaction_details: {
                 order_id: "TEST-" + date + user.uid,
@@ -27,18 +28,26 @@ const Cart = ({ navigation }) => {
             credit_card: {
                 secure: true
             },
-            item_details: {
-                name: cart.name,
-                price: cart.price,
-                quantity: cart.quantity,
-            },
             customer_details: {
-                name: user.name,
+                // name: user.name,
                 email: user.email,
             },
         }
 
-        console.log('cart: ', cart)
+        if (data) {
+            try {
+                const post = await snapTransactions(data);
+                // console.log(post);
+
+                const url = post.redirect_url;
+                console.log(url);
+                navigation.navigate("PaymentGateway", { url, data });
+            } catch (error) {
+                console.error("Error in Checkout:", error);
+            }
+        }
+
+        console.log('cart: ', cart[0].name)
         console.log('data: ', data);
     }
 

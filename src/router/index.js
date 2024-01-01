@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Cart, Checkout, EditProfile, History, HomeScreen, ListProduct, Login, ProductDetail, Profile, SplashScreen, Register } from '../pages';
+import { Cart, Checkout, EditProfile, History, HomeScreen, ListProduct, Login, ProductDetail, Profile, SplashScreen, Register, PaymentGateway } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
 
@@ -65,6 +65,11 @@ const Router = () => {
                 <Stack.Screen
                     name="Register"
                     component={Register}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="PaymentGateway"
+                    component={PaymentGateway}
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>
