@@ -56,7 +56,7 @@ const Cart = ({ navigation }) => {
             {total === 0 ? (
                 <Text>null</Text>
             ) : (
-                <Box backgroundColor={'amber.100'} flex={1}>
+                <Box backgroundColor={colors.white} flex={1}>
                     <ScrollView>
                         {cart.map((item, index) => {
                             console.log('item: ', item)
