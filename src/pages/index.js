@@ -10,6 +10,7 @@ import History from "./History";
 import Login from "./Login";
 import Register from "./Register";
 import PaymentGateway from "./PaymentGateway";
+import FAQ from "./FAQ";
 
 export {
     SplashScreen,
@@ -23,5 +24,6 @@ export {
     History,
     Login,
     Register,
-    PaymentGateway
+    PaymentGateway,
+    FAQ
 };

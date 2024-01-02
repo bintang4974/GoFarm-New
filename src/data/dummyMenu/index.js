@@ -13,7 +13,7 @@ export const dummyMenu = [
         id: 2,
         name: 'FAQ',
         image: <Ionicons name="information-circle-outline" size={24} color={colors.primary} />,
-        pages: 'EditProfile',
+        pages: 'FAQ',
     },
     {
         id: 3,
