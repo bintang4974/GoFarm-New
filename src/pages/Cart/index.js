@@ -1,23 +1,23 @@
 import { Box, HStack, Heading, Image, Pressable, ScrollView, Text } from 'native-base';
-import React, { useState } from 'react';
-import { SafeAreaView } from "react-native-safe-area-context";
-import { dummyOrder } from '../../data';
-import { Button, ListCart } from '../../components';
-import { colors } from '../../utils';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { decrementQuantity, incrementQuantity } from '../../redux/CartReducer';
-import { decrementQty, incrementQty } from '../../redux/ProductReducer';
+import { Button } from '../../components';
 import { auth } from '../../config/FIREBASE';
 import { snapTransactions } from '../../midtrans/payment';
+import { decrementQuantity, incrementQuantity } from '../../redux/CartReducer';
+import { decrementQty, incrementQty } from '../../redux/ProductReducer';
+import { colors } from '../../utils';
 
 const Cart = ({ navigation }) => {
     const cart = useSelector((state) => state.cart.cart);
-    const total = cart.map((item) => item.quantity * item.price).reduce((curr, prev) => curr + prev, 0);
-    const [order, setOrder] = useState(dummyOrder[0]);
+    const total = cart
+        .map((item) => item.quantity * item.price)
+        .reduce((curr, prev) => curr + prev, 0);
+    // const [order, setOrder] = useState(dummyOrder[0]);
     const user = auth.currentUser;
     const date = new Date().getTime();
     const dispatch = useDispatch();
+    
 
     const payment = async () => {
         const data = {
@@ -41,13 +41,14 @@ const Cart = ({ navigation }) => {
 
                 const url = post.redirect_url;
                 console.log(url);
-                navigation.navigate("PaymentGateway", { url, data });
+                navigation.navigate("PaymentGateway", { url, data, cart });
             } catch (error) {
                 console.error("Error in Checkout:", error);
             }
         }
 
         console.log('cart: ', cart[0].name)
+        // console.log('cart: ', cart);
         console.log('data: ', data);
     }
 

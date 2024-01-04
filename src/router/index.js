@@ -40,7 +40,7 @@ const Router = () => {
                 <Stack.Screen
                     name="ProductDetail"
                     component={ProductDetail}
-                    // options={{ headerShown: false }}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="Cart"

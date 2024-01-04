@@ -1,22 +1,26 @@
+import axios from 'axios';
 import { getAuth } from 'firebase/auth';
-import { arrayUnion, collection, doc, getDoc, setDoc } from 'firebase/firestore';
+import { arrayUnion, doc, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { WebView } from 'react-native-webview';
+import { useDispatch } from 'react-redux';
 import { db } from '../../config/FIREBASE';
 import { HEADER_MIDTRANS } from '../../midtrans/config';
-import axios from 'axios';
+import { cleanCart } from '../../redux/CartReducer';
 
 const PaymentGateway = ({ route, navigation }) => {
-    const { url, data } = route.params;
-    const [paymentStatus, setPaymentStatus] = useState(null);
+    const { url, data, cart } = route.params;
+    const [paymentStatus, setPaymentStatus] = useState("");
     const order_id = data.transaction_details.order_id;
     const user = getAuth().currentUser;
+    const dispatch = useDispatch();
     // const historyRef = collection(FIRESTORE, "history");
 
-    console.log('user: ', user.email);
-    console.log('order_id: ', order_id);
-    console.log('url: ', url);
-    console.log('data: ', data);
+    // console.log('user: ', user.email);
+    // console.log('order_id: ', order_id);
+    // console.log('url: ', url);
+    // console.log('data: ', data);
+    // console.log('cart: ', cart);
 
     const fetchData = async () => {
         try {
@@ -43,15 +47,14 @@ const PaymentGateway = ({ route, navigation }) => {
                     {
                         paid: arrayUnion({
                             order_id: order_id,
-                            // name: data.item_details.name,
-                            // price: data.item_details.price,
-                            // quantity: data.item_details.quantity,
-                            status: paymentStatus
+                            orders: { ...cart },
+                            status: "Success"
                         })
                     },
                     { merge: true }
                 );
-
+                
+                dispatch(cleanCart());
                 navigation.navigate('MainApp');
             } else {
                 console.log('Status pembayaran tidak dikenali');
