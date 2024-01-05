@@ -40,7 +40,7 @@ const FAQ = ({ navigation }) => {
           </Center>
         <Gap height={10} />
         <Box mx={10} shadow={5} >
-          <Button borderRadius={8} borderWidth={2} borderColor={colors.primary} shadow={7} backgroundColor={colors.white} title="Saya Paham!" type="text" padding={7} onPress={() => navigation.navigate('MainApp')} color={colors.primary} />
+          <Button borderRadius={8} borderWidth={2} borderColor={colors.primary} shadow={7} backgroundColor={colors.primary} title="Saya Paham!" type="text" padding={7} onPress={() => navigation.navigate('MainApp')} color={colors.primary} />
         </Box>
       </SafeAreaView>
     </>
