@@ -7,6 +7,7 @@ import { Logo } from '../../assets';
 import { ActivityIndicator, TouchableOpacity } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/FIREBASE';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");
@@ -20,6 +21,7 @@ const Login = ({ navigation }) => {
                 setLoading(false);
             }
             if (authUser) {
+                AsyncStorage.setItem('KeepLoggedIn', JSON.stringify(true));
                 navigation.replace("MainApp");
             }
         });
