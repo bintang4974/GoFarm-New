@@ -1,6 +1,6 @@
 import SplashScreen from "./SplashScreen";
 import HomeScreen from "./HomeScreen";
-import ListProduct from "./ListProduct";
+import Search from "./Search";
 import Profile from "./Profile";
 import ProductDetail from "./ProductDetail";
 import Cart from "./Cart";
@@ -15,7 +15,7 @@ import FAQ from "./FAQ";
 export {
     SplashScreen,
     HomeScreen,
-    ListProduct,
+    Search,
     Profile,
     ProductDetail,
     Cart,

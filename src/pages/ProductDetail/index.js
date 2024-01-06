@@ -29,20 +29,19 @@ const ProductDetail = ({ route, navigation }) => {
         <SafeAreaView style={{ flex: 1 }}>
             <Box backgroundColor={colors.white} flex={1}>
                 <ProductSlider image={image} />
-                <Box backgroundColor={colors.primary} padding={2} position={"absolute"} borderRadius={"20"} margin={4}>
+                <Box backgroundColor={colors.primary} padding={2} position={"absolute"} borderRadius={10} margin={4}>
                     <TouchableOpacity onPress={() => navigation.navigate('MainApp')}>
                         <Ionicons name="arrow-back-outline" size={24} color={colors.white} />
                     </TouchableOpacity>
                 </Box>
-                <Box position={"absolute"} bottom={0} padding={4} height={"60%"} width={"100%"} backgroundColor={colors.primary} borderTopRadius={40}>
+                <Box position={"absolute"} bottom={0} padding={6} height={"60%"} width={"100%"} backgroundColor={colors.primary} borderTopRadius={30}>
                     <HStack space={2} justifyContent={"space-between"} alignItems={"center"}>
                         <Heading fontSize={"xl"} color={colors.white} textTransform={"capitalize"}>{product.name}</Heading>
-                        <Text color={colors.white} fontSize={14}>{product.price}</Text>
+                        <Heading color={colors.white} fontSize={"xl"}>{product.price}</Heading>
                     </HStack>
                     <Gap height={10} />
-                    <HStack space={3} alignItems={"center"}>
+                    <HStack space={2} alignItems={"center"}>
                         <Ionicons name="star-half-outline" size={20} color={"yellow"} />
-                        <Text color={colors.white}>{product.rating}</Text>
                         <Text color={colors.white}>(250 review)</Text>
                     </HStack>
                     <Gap height={10} />

@@ -1,22 +1,31 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Box, HStack } from 'native-base';
+import { Box, HStack, Heading, Image, Text } from 'native-base';
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { colors } from '../../../utils';
 import { Button } from '../../atoms';
+import { Logo } from "../../../assets";
 
 const Header = ({ navigation }) => {
     return (
-        <Box backgroundColor={colors.primary} height={90} borderBottomRadius={15}>
-            <HStack space={2} mt={15} marginX={30} justifyContent={'space-between'}>
+        <HStack space={2} justifyContent={"space-between"} backgroundColor={colors.white} px={5} py={3} alignItems={"center"}>
+            <HStack alignItems={"center"} space={2}>
+                <Image source={Logo} height={45} width={45} alt="logo" />
+                <Heading fontSize={"xl"}>Go Farm</Heading>
+            </HStack>
+            <HStack space={2}>
+                <Ionicons name="notifications-outline" size={28} />
+                <Ionicons name="cart-outline" size={28} />
+            </HStack>
+            {/* <HStack space={2} mt={15} marginX={30} justifyContent={'space-between'}>
                 <HStack backgroundColor={colors.white} borderRadius={5} p={2} alignItems={"center"}>
                     <Ionicons name="search-outline" size={24} />
                     <TextInput placeholder='Search' style={styles.input} />
                 </HStack>
 
                 <Button icon="cart" totalCart={2} padding={2} onPress={() => navigation.navigate('Cart')} />
-            </HStack>
-        </Box>
+            </HStack> */}
+        </HStack>
     )
 }
 

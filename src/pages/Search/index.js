@@ -1,18 +1,18 @@
-import { Box, Heading, ScrollView } from 'native-base';
+import { Box, Heading, ScrollView, Text } from 'native-base';
 import React, { useState } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Gap, Header, ListProducts } from '../../components';
 import { dummyCategory, dummyProduct } from '../../data';
 import { colors } from '../../utils';
 
-const ListProduct = ({ navigation }) => {
+const Search = ({ navigation }) => {
   const [category, setCategory] = useState(dummyCategory);
   const [product, setProduct] = useState(dummyProduct);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Box backgroundColor={colors.white} flex={1}>
-        <Header navigation={navigation} />
+        {/* <Header navigation={navigation} />
         <Gap height={10} />
         <Heading fontSize={"2xl"} p={2}>Whislist</Heading>
         <Gap height={10} />
@@ -21,10 +21,11 @@ const ListProduct = ({ navigation }) => {
             <ListProducts product={product} />
           </ScrollView>
           <Gap height={50} />
-        </Box>
+        </Box> */}
+        <Text>kontol</Text>
       </Box>
     </SafeAreaView>
   )
 }
 
-export default ListProduct
+export default Search

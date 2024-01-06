@@ -10,6 +10,8 @@ const TabItem = ({ isFocused, onPress, onLongPress, label }) => {
                 return isFocused ? <Ionicons name='home-outline' size={28} /> : <Ionicons name='home-outline' size={28} />
             case 'Search':
                 return isFocused ? <Ionicons name='search-outline' size={28} /> : <Ionicons name='search-outline' size={28} />
+            case 'History':
+                return isFocused ? <Ionicons name='bookmark-outline' size={28} /> : <Ionicons name='bookmark-outline' size={28} />
             case 'Profile':
                 return isFocused ? <Ionicons name='person-outline' size={28} /> : <Ionicons name='person-outline' size={28} />
             default:
