@@ -1,0 +1,44 @@
+import { Text, SafeAreaView, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { Box, Button, HStack, Heading, Image } from 'native-base'
+import { Imam, Payment, centang } from '../../assets'
+import HomeScreen from '../HomeScreen'
+
+const SuccesCheckout = ({ navigation }) => {
+
+    return (
+        <SafeAreaView>
+            <Image
+                source={Payment}
+                justifyContent={'center'}
+                height={300}
+                width={400}
+                alt='payment' />
+            <HStack justifyContent={"center"} p={"8"}>
+                <Heading fontSize={'md'}>Pembayaran Anda Berhasil!</Heading>
+            </HStack>
+            <Box p={2} alignItems={"center"} fontSize={'sm'}>
+                <Image source={centang}
+                    height={20}
+                    width={70}
+                    alt='centang' />
+                <Text></Text>
+                <Text fontStyle={'sm'} >Terimakasih telah menggunakan GoFarm App</Text>
+                <Text>Silahkan Menunggu Pesanan Anda</Text>
+            </Box>
+
+            <HStack justifyContent={'center'} p={'5'}>
+                <Button
+                    onPress={() => navigation.navigate("MainApp")}
+                    fontSize={'md'}
+                    borderRadius={10}
+                    backgroundColor={'#448456'}>
+                    Back to Home
+                </Button>
+            </HStack>
+
+        </SafeAreaView>
+    )
+}
+
+export default SuccesCheckout

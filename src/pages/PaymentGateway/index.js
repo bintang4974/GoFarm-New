@@ -55,7 +55,7 @@ const PaymentGateway = ({ route, navigation }) => {
                 );
                 
                 dispatch(cleanCart());
-                navigation.navigate('MainApp');
+                navigation.navigate('SuccessCheckout');
             } else {
                 console.log('Status pembayaran tidak dikenali');
             }

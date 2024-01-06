@@ -12,6 +12,7 @@ import Register from "./Register";
 import PaymentGateway from "./PaymentGateway";
 import FAQ from "./FAQ";
 import Onboarding from "./Onboarding"
+import SuccesCheckout from "./SuccessCheckout";
 
 export {
     SplashScreen,
@@ -27,5 +28,6 @@ export {
     Register,
     PaymentGateway,
     FAQ,
-    Onboarding
+    Onboarding,
+    SuccesCheckout
 };
