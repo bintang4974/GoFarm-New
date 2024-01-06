@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Cart, Checkout, EditProfile, History, HomeScreen, ListProduct, Login, ProductDetail, Profile, SplashScreen, Register, PaymentGateway, FAQ, Search } from '../pages';
+import { Cart, Checkout, EditProfile, History, HomeScreen, Search, Login, ProductDetail, Profile, SplashScreen, Register, PaymentGateway, FAQ, Onboarding } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
 
@@ -12,8 +12,7 @@ const MainApp = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
             <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-            <Tab.Screen name="Search" component={Search} options={{ headerShown: false }} />
-            <Tab.Screen name="History" component={History} />
+            <Tab.Screen name="ListProduct" component={Search} options={{ title: 'Search', headerShown: false }} />
             <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
         </Tab.Navigator>
     );
@@ -22,7 +21,7 @@ const MainApp = () => {
 const Router = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='Login'>
+            <Stack.Navigator initialRouteName='Splash'>
                 <Stack.Screen
                     name="Login"
                     component={Login}
@@ -46,22 +45,22 @@ const Router = () => {
                 <Stack.Screen
                     name="Cart"
                     component={Cart}
-                    options={{ headerShown: false }}
+                    // options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="Checkout"
                     component={Checkout}
-                // options={{ headerShown: false }}
+                    // options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="EditProfile"
                     component={EditProfile}
-                // options={{ headerShown: false }}
+                    // options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="History"
                     component={History}
-                // options={{ headerShown: false }}
+                    // options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="Register"
@@ -76,7 +75,12 @@ const Router = () => {
                 <Stack.Screen
                     name="FAQ"
                     component={FAQ}
-                // options={{ headerShown: false }}
+                    // options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Onboarding"
+                    component={Onboarding}
+                    options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
