@@ -8,7 +8,7 @@ import { Gap } from '../../components';
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('MainApp');
+      navigation.replace('Onboarding');
     }, 2000)
   }, []);
 

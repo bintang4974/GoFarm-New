@@ -11,6 +11,7 @@ import Login from "./Login";
 import Register from "./Register";
 import PaymentGateway from "./PaymentGateway";
 import FAQ from "./FAQ";
+import Onboarding from "./Onboarding"
 
 export {
     SplashScreen,
@@ -25,5 +26,6 @@ export {
     Login,
     Register,
     PaymentGateway,
-    FAQ
+    FAQ,
+    Onboarding
 };
