@@ -25,7 +25,7 @@ const Onboarding = ({ navigation }) => {
                         backgroundColor={colors.primary}
                         fontColor={colors.white}
                         shadow={5}
-                        onPress={() => navigation.navigate('Login')}
+                        onPress={() => navigation.navigate('Register')}
                     >
                         <Text bold color={"white"}>Get Started!</Text>
                     </Button>
@@ -36,7 +36,7 @@ const Onboarding = ({ navigation }) => {
                         backgroundColor={colors.white}
                         fontColor={colors.primary}
                         shadow={5}
-                        onPress={() => navigation.navigate('Register')}
+                        onPress={() => navigation.navigate('Login')}
                     >
                         <Text bold color={colors.primary}>Sign In</Text>
                     </Button>

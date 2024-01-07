@@ -29,5 +29,5 @@ export {
     PaymentGateway,
     FAQ,
     Onboarding,
-    SuccesCheckout
+    SuccesCheckout,
 };

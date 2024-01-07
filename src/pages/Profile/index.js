@@ -2,7 +2,7 @@ import { Box, Heading, Image, Text } from "native-base";
 import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "../../utils";
-import { ListMenu } from "../../components";
+import { Header, ListMenu } from "../../components";
 import { dummyMenu, dummyProfile } from "../../data";
 import {
   getFirestore,
@@ -46,6 +46,7 @@ const Profile = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Box backgroundColor={colors.white} flex={1}>
+      <Header navigation={navigation} />
         <Box
           position={"absolute"}
           bottom={0}
