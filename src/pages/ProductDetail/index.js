@@ -7,6 +7,7 @@ import { colors } from '../../utils';
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, decrementQuantity, incrementQuantity } from "../../redux/CartReducer";
 import { decrementQty, incrementQty } from "../../redux/ProductReducer";
+import { TouchableOpacity } from "react-native";
 
 const ProductDetail = ({ route, navigation }) => {
     const dispatch = useDispatch();
@@ -28,113 +29,33 @@ const ProductDetail = ({ route, navigation }) => {
         <SafeAreaView style={{ flex: 1 }}>
             <Box backgroundColor={colors.white} flex={1}>
                 <ProductSlider image={image} />
-                <Box position={"absolute"} bottom={0} padding={4} height={"60%"} width={"100%"} backgroundColor={colors.primary} borderTopRadius={40}>
+                <Box backgroundColor={colors.primary} padding={2} position={"absolute"} borderRadius={10} margin={4}>
+                    <TouchableOpacity onPress={() => navigation.navigate('MainApp')}>
+                        <Ionicons name="arrow-back-outline" size={24} color={colors.white} />
+                    </TouchableOpacity>
+                </Box>
+                <Box position={"absolute"} bottom={0} padding={6} height={"60%"} width={"100%"} backgroundColor={colors.primary} borderTopRadius={30}>
                     <HStack space={2} justifyContent={"space-between"} alignItems={"center"}>
                         <Heading fontSize={"xl"} color={colors.white} textTransform={"capitalize"}>{product.name}</Heading>
-                        <Text color={colors.white} fontSize={14}>{product.price}</Text>
+                        <Heading color={colors.white} fontSize={"xl"}>{product.price}</Heading>
                     </HStack>
                     <Gap height={10} />
-                    <HStack space={3} alignItems={"center"}>
+                    <HStack space={2} alignItems={"center"}>
                         <Ionicons name="star-half-outline" size={20} color={"yellow"} />
-                        <Text color={colors.white}>{product.rating}</Text>
                         <Text color={colors.white}>(250 review)</Text>
                     </HStack>
                     <Gap height={10} />
                     <Text color={colors.white}>{product.description}</Text>
-                    {/* <Input label="qty" width={100} height={30} fontSize={16} />
-                    <Select label="qty" width={100} height={30} fontSize={16} data={product.weight} /> */}
-                    {cart.some((c) => c.id === product.id) ? (
-                        <Box backgroundColor={colors.white} borderRadius={5} alignItems={"center"} py={2} position={"absolute"} bottom={0} left={0} right={0} margin={5}>
-                            <Pressable
-                                style={{
-                                    flexDirection: "row",
-                                    paddingHorizontal: 10,
-                                    paddingVertical: 5,
-                                    // alignItems: "center"
-                                }}
-                            >
-                                <Pressable
-                                    onPress={() => {
-                                        dispatch(decrementQuantity(product)); // cart
-                                        dispatch(decrementQty(product)); // product
-                                    }}
-                                    style={{
-                                        width: 26,
-                                        height: 26,
-                                        borderRadius: 13,
-                                        borderColor: "#BEBEBE",
-                                        backgroundColor: "#E0E0E0",
-                                        justifyContent: "center",
-                                        alignContent: "center",
-                                    }}
-                                >
-                                    <Text
-                                        style={{
-                                            fontSize: 20,
-                                            color: "#088F8F",
-                                            paddingHorizontal: 6,
-                                            fontWeight: "600",
-                                            textAlign: "center",
-                                        }}
-                                    >
-                                        -
-                                    </Text>
-                                </Pressable>
-
-                                <Pressable>
-                                    <Text
-                                        style={{
-                                            fontSize: 19,
-                                            color: "#088F8F",
-                                            paddingHorizontal: 8,
-                                            fontWeight: "600",
-                                        }}
-                                    >
-                                        {product.quantity}
-                                    </Text>
-                                </Pressable>
-
-                                <Pressable
-                                    onPress={() => {
-                                        dispatch(incrementQuantity(product)); // cart
-                                        dispatch(incrementQty(product)); //product
-                                    }}
-                                    style={{
-                                        width: 26,
-                                        height: 26,
-                                        borderRadius: 13,
-                                        borderColor: "#BEBEBE",
-                                        backgroundColor: "#E0E0E0",
-                                        justifyContent: "center",
-                                        alignContent: "center",
-                                    }}
-                                >
-                                    <Text
-                                        style={{
-                                            fontSize: 20,
-                                            color: "#088F8F",
-                                            paddingHorizontal: 6,
-                                            fontWeight: "600",
-                                            textAlign: "center",
-                                        }}
-                                    >
-                                        +
-                                    </Text>
-                                </Pressable>
-                            </Pressable>
-                        </Box>
-                    ) : (
-                        <Box position={"absolute"} bottom={0} left={0} right={0} margin={5}>
-                            <Button
-                                type="textIcon"
-                                title="Add to cart"
-                                icon="cart-white"
-                                padding={15}
-                                fontSize={18}
-                                onPress={addItemToCart}
-                            />
-                        </Box>
-                    )}
+                    <Box position={"absolute"} bottom={0} left={0} right={0} margin={5}>
+                        <Button
+                            type="textIcon"
+                            title="Add to cart"
+                            icon="cart-white"
+                            padding={15}
+                            fontSize={18}
+                            onPress={addItemToCart}
+                        />
+                    </Box>
 
                     {total === 0 ? (
                         null

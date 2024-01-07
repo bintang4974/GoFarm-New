@@ -1,6 +1,6 @@
 import SplashScreen from "./SplashScreen";
 import HomeScreen from "./HomeScreen";
-import ListProduct from "./ListProduct";
+import Search from "./Search";
 import Profile from "./Profile";
 import ProductDetail from "./ProductDetail";
 import Cart from "./Cart";
@@ -11,11 +11,13 @@ import Login from "./Login";
 import Register from "./Register";
 import PaymentGateway from "./PaymentGateway";
 import FAQ from "./FAQ";
+import Onboarding from "./Onboarding"
+import SuccesCheckout from "./SuccessCheckout";
 
 export {
     SplashScreen,
     HomeScreen,
-    ListProduct,
+    Search,
     Profile,
     ProductDetail,
     Cart,
@@ -25,5 +27,7 @@ export {
     Login,
     Register,
     PaymentGateway,
-    FAQ
+    FAQ,
+    Onboarding,
+    SuccesCheckout
 };

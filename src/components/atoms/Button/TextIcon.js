@@ -10,6 +10,8 @@ const TextIcon = ({ icon, padding, onPress, title, fontSize, backgroundColor, fo
       return <Ionicons name="cart-outline" size={24} color={colors.primary} />;
     } else if (icon === 'checkout') {
       return <Ionicons name="arrow-forward-outline" size={24} color={colors.white} />;
+    } else if (icon === 'back') {
+      return <Ionicons name="arrow-back-circle-outline" size={24} color={colors.white} />;
     }
     //   const Icon = () => {
     //     if (icon === 'keranjang') {

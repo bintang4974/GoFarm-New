@@ -6,7 +6,7 @@ import { colors } from '../../../utils';
 
 const CardProduct = ({ product, navigation }) => {
     return (
-        <Box mx={4} my={5}>
+        <Box mx={4} my={5} shadow={6}>
             <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ProductDetail', { product })}>
                 <Image source={{ uri: product.image }} alt='image' width={140} height={144} />
                 <Box backgroundColor={"#67D490"} p={2}>
@@ -26,7 +26,7 @@ export default CardProduct;
 const styles = StyleSheet.create({
     card: {
         backgroundColor: '#FAFBFD',
-        borderRadius: 20,
+        borderRadius: 16,
         overflow: 'hidden', // to ensure the rounded corners are applied to the Image
     },
 });

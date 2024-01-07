@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Cart, Checkout, EditProfile, History, HomeScreen, ListProduct, Login, ProductDetail, Profile, SplashScreen, Register, PaymentGateway, FAQ } from '../pages';
+import { Cart, Checkout, EditProfile, History, HomeScreen, Search, Login, ProductDetail, Profile, SplashScreen, Register, PaymentGateway, FAQ, Onboarding, SuccesCheckout } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
 
@@ -12,7 +12,7 @@ const MainApp = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
             <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-            <Tab.Screen name="ListProduct" component={ListProduct} options={{ title: 'Search', headerShown: false }} />
+            <Tab.Screen name="ListProduct" component={Search} options={{ title: 'Search', headerShown: false }} />
             <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
         </Tab.Navigator>
     );
@@ -21,7 +21,7 @@ const MainApp = () => {
 const Router = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='Login'>
+            <Stack.Navigator initialRouteName='Splash'>
                 <Stack.Screen
                     name="Login"
                     component={Login}
@@ -76,6 +76,16 @@ const Router = () => {
                     name="FAQ"
                     component={FAQ}
                     // options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Onboarding"
+                    component={Onboarding}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="SuccessCheckout"
+                    component={SuccesCheckout}
+                    options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
