@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Box, HStack, Heading, Image, Text } from 'native-base';
 import React from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { colors } from '../../../utils';
 import { Button } from '../../atoms';
 import { Logo } from "../../../assets";
@@ -15,7 +15,9 @@ const Header = ({ navigation }) => {
             </HStack>
             <HStack space={2}>
                 <Ionicons name="notifications-outline" size={28} />
-                <Ionicons name="cart-outline" size={28} />
+                <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
+                    <Ionicons name="cart-outline" size={28} />
+                </TouchableOpacity>
             </HStack>
             {/* <HStack space={2} mt={15} marginX={30} justifyContent={'space-between'}>
                 <HStack backgroundColor={colors.white} borderRadius={5} p={2} alignItems={"center"}>
