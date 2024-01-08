@@ -13,7 +13,7 @@ const MainApp = () => {
         <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
             <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
             {/* <Tab.Screen name="Search" component={Search} options={{ headerShown: false }} /> */}
-            {/* <Tab.Screen name="History" component={History} /> */}
+            <Tab.Screen name="History" component={History} />
             <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
         </Tab.Navigator>
     );
@@ -58,11 +58,11 @@ const Router = () => {
                     component={EditProfile}
                     // options={{ headerShown: false }}
                 />
-                {/* <Stack.Screen
+                <Stack.Screen
                     name="History"
                     component={History}
                     // options={{ headerShown: false }}
-                /> */}
+                />
                 <Stack.Screen
                     name="Register"
                     component={Register}

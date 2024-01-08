@@ -12,6 +12,7 @@ import PaymentGateway from "./PaymentGateway";
 import FAQ from "./FAQ";
 import Onboarding from "./Onboarding"
 import SuccesCheckout from "./SuccessCheckout";
+import History from './History';
 
 export {
     SplashScreen,
@@ -28,4 +29,5 @@ export {
     FAQ,
     Onboarding,
     SuccesCheckout,
+    History
 };
