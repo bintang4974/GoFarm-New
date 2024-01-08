@@ -1,7 +1,7 @@
 import { Box, HStack, Heading, Image, Pressable, ScrollView, Text } from 'native-base';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '../../components';
+import { Button, Gap } from '../../components';
 import { auth } from '../../config/FIREBASE';
 import { snapTransactions } from '../../midtrans/payment';
 import { decrementQuantity, incrementQuantity } from '../../redux/CartReducer';
@@ -17,7 +17,7 @@ const Cart = ({ navigation }) => {
     const user = auth.currentUser;
     const date = new Date().getTime();
     const dispatch = useDispatch();
-    
+
 
     const payment = async () => {
         const data = {
@@ -62,7 +62,7 @@ const Cart = ({ navigation }) => {
                         {cart.map((item, index) => {
                             console.log('item: ', item)
                             return (
-                                <HStack space={3} justifyContent={"space-between"} alignItems={"center"} backgroundColor={colors.white} shadow={2} mx={6} my={2} padding={3} borderRadius={10}>
+                                <HStack key={index} space={3} justifyContent={"space-between"} alignItems={"center"} backgroundColor={colors.white} shadow={2} mx={6} my={2} padding={3} borderRadius={10}>
                                     <Image source={{ uri: item.image }} alt='image' height={50} width={50} />
                                     <Box>
                                         <Heading size={"sm"}>{item.name}</Heading>
@@ -134,7 +134,12 @@ const Cart = ({ navigation }) => {
                             )
                         })}
                     </ScrollView>
-                    <Box position={"absolute"} bottom={0} left={0} right={0} m={5}>
+                    <Box p={5} shadow={6} backgroundColor={colors.white} borderTopRadius={20}>
+                        <HStack space={2} justifyContent={"space-between"}>
+                            <Heading fontSize={"lg"}>Total: </Heading>
+                            <Heading fontSize={"lg"}>{cart.length} items | Rp. {total}</Heading>
+                        </HStack>
+                        <Gap height={12} />
                         <Button
                             title="Checkout"
                             type="textIcon"
