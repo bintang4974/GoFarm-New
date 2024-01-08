@@ -6,7 +6,6 @@ import ProductDetail from "./ProductDetail";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
 import EditProfile from "./EditProfile";
-import History from "./History";
 import Login from "./Login";
 import Register from "./Register";
 import PaymentGateway from "./PaymentGateway";
@@ -23,7 +22,6 @@ export {
     Cart,
     Checkout,
     EditProfile,
-    History,
     Login,
     Register,
     PaymentGateway,
