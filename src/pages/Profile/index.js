@@ -75,9 +75,9 @@ const Profile = ({ navigation }) => {
               {profile.phone},{profile.alamat}
             </Text>
           </Box>
-          {menu.map((menuItem) => (
+          {menu.map((menuItem, index) => (
             <ListMenu
-              key={menuItem.id}
+              key={index}
               menu={menuItem}
               navigation={navigation}
             />
