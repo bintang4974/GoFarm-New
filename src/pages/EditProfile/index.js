@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Box, Image, Text, Input, Button } from 'native-base';
 import { colors } from '../../utils';
-import { auth, firestore } from '../../config/FIREBASE';
+import { auth } from '../../config/FIREBASE';
 import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
-import { updateProfile, updatePassword } from 'firebase/auth';  // Import updatePassword
+import { updateProfile, updatePassword } from 'firebase/auth';
 import { dummyProfile } from '../../data';
 
 const EditProfile = ({ navigation }) => {
@@ -12,7 +12,7 @@ const EditProfile = ({ navigation }) => {
   const [profile, setProfile] = useState({
     id: '',
     name: '',
-    password: '',  // Change the field name to 'password'
+    password: '',
     phone: '',
     alamat: '',
   });
@@ -49,19 +49,28 @@ const EditProfile = ({ navigation }) => {
     if (user) {
       try {
         const userDocRef = doc(getFirestore(), 'users', user.uid);
+
+        // Ensure the password field is not undefined
+        const updatedProfile = { ...profile };
+        if (!updatedProfile.password) {
+          delete updatedProfile.password; // Remove the password field if it is undefined
+        }
+
         // Update the document in Firestore with the new password
-        await updateDoc(userDocRef, { ...profile, password: profile.password });
+        await updateDoc(userDocRef, updatedProfile);
 
         // Update authentication user data
         await updateProfile(auth.currentUser, {
-          displayName: profile.name,
-          photoURL: profile.avatar, // Assuming avatar is a URL
+          displayName: updatedProfile.name,
+          photoURL: updatedProfile.avatar, // Assuming avatar is a URL
         });
 
         // Update password using updatePassword method
-        await updatePassword(auth.currentUser, profile.password);
+        if (updatedProfile.password) {
+          await updatePassword(auth.currentUser, updatedProfile.password);
+        }
 
-        console.log('Profile updated:', profile);
+        console.log('Profile updated:', updatedProfile);
         navigation.navigate("Profile");
       } catch (error) {
         console.error('Error updating user profile in Firestore: ', error);
@@ -79,9 +88,8 @@ const EditProfile = ({ navigation }) => {
           backgroundColor={colors.primary}
           borderTopRadius={20}
           borderBottomRadius={20}
-          margin={10}  // Adjust this margin value for spacing
+          margin={10}
         >
-          {/* Display user profile data */}
           <Image
             source={gambar.avatar}
             width={165}
@@ -121,41 +129,3 @@ const EditProfile = ({ navigation }) => {
 };
 
 export default EditProfile;
-
-
-
-// import { Box, HStack, Image, Text } from 'native-base';
-// import React, { useState } from 'react';
-// import { SafeAreaView } from "react-native-safe-area-context";
-// import { colors } from '../../utils';
-// import { dummyProfile } from '../../data';
-// import { Button, Input } from '../../components';
-
-// const EditProfile = () => {
-//     const [profile, setProfile] = useState(dummyProfile);
-
-//     return (
-//         // <SafeAreaView style={{ flex: 1 }}>
-//             <Box backgroundColor={colors.white} flex={1} px={5} paddingTop={5}>
-//                 <Input label="Name" value={profile.name} />
-//                 <Input label="Email" value={profile.email} />
-//                 <Input label="Telp" value={profile.telp} />
-//                 <Input label="Address" value={profile.address} />
-//                 <Box mt={5}>
-//                     <Text fontSize={"md"}>Photo :</Text>
-//                     <HStack space={2} alignItems={"center"}>
-//                         <Image source={profile.avatar} width={140} height={140} borderRadius={20} alt='avatar' />
-//                         <Box flex={1}>
-//                             <Button title="Change" type="text" padding={7} />
-//                         </Box>
-//                     </HStack>
-//                 </Box>
-//                 <Box my={5}>
-//                     <Button title="Submit" type="textIcon" icon="checkout" padding={10} fontColor={colors.white} fontSize={20} backgroundColor={colors.primary} />
-//                 </Box>
-//             </Box>
-//         // </SafeAreaView>
-//     )
-// }
-
-// export default EditProfile
