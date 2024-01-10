@@ -1,9 +1,9 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Cart, Checkout, EditProfile, History, HomeScreen, Search, Login, ProductDetail, Profile, SplashScreen, Register, PaymentGateway, FAQ, Onboarding, SuccesCheckout, Notification } from '../pages';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
+import { Cart, EditProfile, FAQ, History, HomeScreen, Login, Onboarding, PaymentGateway, ProductDetail, Profile, Register, SplashScreen, SuccesCheckout } from '../pages';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -12,7 +12,6 @@ const MainApp = () => {
     return (
         <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
             <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-            {/* <Tab.Screen name="Search" component={Search} options={{ headerShown: false }} /> */}
             <Tab.Screen name="History" component={History} />
             <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
         </Tab.Navigator>
@@ -48,11 +47,6 @@ const Router = () => {
                     component={Cart}
                     // options={{ headerShown: false }}
                 />
-                {/* <Stack.Screen
-                    name="Checkout"
-                    component={Checkout}
-                    // options={{ headerShown: false }}
-                /> */}
                 <Stack.Screen
                     name="EditProfile"
                     component={EditProfile}
