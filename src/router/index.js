@@ -48,11 +48,11 @@ const Router = () => {
                     component={Cart}
                     // options={{ headerShown: false }}
                 />
-                <Stack.Screen
+                {/* <Stack.Screen
                     name="Checkout"
                     component={Checkout}
                     // options={{ headerShown: false }}
-                />
+                /> */}
                 <Stack.Screen
                     name="EditProfile"
                     component={EditProfile}
