@@ -21,16 +21,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.bintank.GoFarm"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "d5a163cf-089e-483b-b92a-4a3954c1614e"
-      }
     }
   }
 }
