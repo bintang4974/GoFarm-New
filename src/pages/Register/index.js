@@ -16,7 +16,7 @@ const Register = ({ navigation }) => {
   const [phone, setPhone] = useState("");
   const [alamat, setAlamat] = useState("");
 
-  const register = () => {
+  const HandleRegister = () => {
     console.log("Register function called");
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -97,7 +97,7 @@ const Register = ({ navigation }) => {
               title="Register"
               type="text"
               padding={10}
-              onPress={register}
+              onPress={HandleRegister}
             />
           </Box>
           <Gap height={20} />
