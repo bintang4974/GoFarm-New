@@ -1,13 +1,13 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Box, HStack, Heading, Image, Text } from 'native-base';
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from '../../utils';
-import { Button, Gap, Input } from '../../components';
-import { Logo } from '../../assets';
 import { ActivityIndicator, TouchableOpacity } from 'react-native';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Logo } from '../../assets';
+import { Button, Gap, Input } from '../../components';
 import { auth } from '../../config/FIREBASE';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { colors } from '../../utils';
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("");

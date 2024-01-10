@@ -1,10 +1,9 @@
-import { View } from 'react-native'
+import { Box, Button, Heading, Image, Text } from 'native-base'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Box, Center, Heading, Image, Text, Button } from 'native-base'
+import { Onboardings } from '../../assets'
 import { Gap } from '../../components'
 import { colors } from '../../utils'
-import { Onboardings } from '../../assets'
 
 const Onboarding = ({ navigation }) => {
     return (

@@ -1,17 +1,13 @@
-import { Box, Heading, Image, Text } from "native-base";
-import React, { useState, useEffect } from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { signOut } from "firebase/auth";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { Box, Heading, Image, Pressable, Text } from "native-base";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "../../utils";
 import { Header, ListMenu } from "../../components";
-import { dummyMenu, dummyProfile } from "../../data";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  doc,
-  getDoc,
-} from "firebase/firestore";
 import { auth } from "../../config/FIREBASE";
+import { dummyMenu, dummyProfile } from "../../data";
+import { colors } from "../../utils";
 
 const Profile = ({ navigation }) => {
   const [profile, setProfile] = useState(dummyProfile);
@@ -43,10 +39,18 @@ const Profile = ({ navigation }) => {
     fetchUserData();
   }, []);
 
+  const signOutUser = () => {
+    signOut(auth).then(() => {
+      navigation.replace("Login");
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Box backgroundColor={colors.white} flex={1}>
-      <Header navigation={navigation} />
+        <Header navigation={navigation} />
         <Box
           position={"absolute"}
           bottom={0}
@@ -82,6 +86,12 @@ const Profile = ({ navigation }) => {
               navigation={navigation}
             />
           ))}
+          <Box alignItems={'center'} mt={5}>
+            <Pressable onPress={signOutUser} backgroundColor={colors.white} shadow={4} alignItems={'center'} p={2} borderRadius={20} >
+              <Ionicons name="power-outline" size={28} color={'red'} />
+              {/* <Text color={'red.600'} fontSize={"xs"}>Sign Out</Text> */}
+            </Pressable>
+          </Box>
         </Box>
       </Box>
     </SafeAreaView>
@@ -89,36 +99,3 @@ const Profile = ({ navigation }) => {
 };
 
 export default Profile;
-
-// import { Box, Heading, Image, Text } from 'native-base';
-// import React, { useState } from 'react';
-// import { SafeAreaView } from "react-native-safe-area-context";
-// import { dummyMenu, dummyProfile } from '../../data';
-// import { colors } from '../../utils';
-// import { ListMenu } from '../../components';
-// import { auth } from '../../config/FIREBASE';
-
-// const Profile = ({ navigation }) => {
-//   const [profile, setProfile] = useState(dummyProfile);
-//   const [menu, setMenu] = useState(dummyMenu);
-//   const user = auth.currentUser;
-//   console.log("user: ", user)
-
-//   return (
-//     <SafeAreaView style={{ flex: 1 }}>
-//       <Box backgroundColor={colors.white} flex={1}>
-//         <Box position={"absolute"} bottom={0} height={550} width={"100%"} backgroundColor={colors.primary} borderTopRadius={40}>
-//           <Image source={profile.avatar} width={150} height={150} alt='avatar' borderRadius={40} alignSelf={"center"} marginTop={-75} />
-//           <Box marginTop={2} alignItems={"center"}>
-//             <Heading fontSize={"lg"} color={colors.white}>{user.email}</Heading>
-//             <Text color={colors.white}>{user.displayName}</Text>
-//             <Text color={colors.white}>{user.alamat}</Text>
-//           </Box>
-//           <ListMenu menu={menu} navigation={navigation} />
-//         </Box>
-//       </Box>
-//     </SafeAreaView>
-//   )
-// }
-
-// export default Profile

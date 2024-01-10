@@ -1,13 +1,13 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import { Box, HStack, Heading, Image, Text } from 'native-base';
 import React, { useState } from 'react';
+import { Alert, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "../../utils";
-import { Button, Gap, Input } from "../../components";
 import { Logo } from "../../assets";
-import { TouchableOpacity, Alert } from "react-native";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Button, Gap, Input } from "../../components";
 import { auth, db } from "../../config/FIREBASE";
-import { doc, setDoc } from "firebase/firestore";
+import { colors } from "../../utils";
 
 const Register = ({ navigation }) => {
   const [name, setName] = useState("");

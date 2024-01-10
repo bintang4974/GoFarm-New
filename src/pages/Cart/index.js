@@ -1,4 +1,4 @@
-import { Box, HStack, Heading, Image, Pressable, ScrollView, Text } from 'native-base';
+import { Box, Center, HStack, Heading, Image, Pressable, ScrollView, Text } from 'native-base';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Gap } from '../../components';
@@ -55,7 +55,7 @@ const Cart = ({ navigation }) => {
     return (
         <>
             {total === 0 ? (
-                <Text>null</Text>
+                <Center flex={1}>Anda belum menambahkan barang ke keranjang!</Center>
             ) : (
                 <Box backgroundColor={colors.white} flex={1}>
                     <ScrollView>

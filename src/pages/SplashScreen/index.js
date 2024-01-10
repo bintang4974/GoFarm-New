@@ -1,9 +1,9 @@
-import { Box, Center, Heading, Image, Text } from 'native-base';
+import { Box, Center, Heading, Image } from 'native-base';
 import React, { useEffect } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from '../../utils';
 import { Logo } from '../../assets';
 import { Gap } from '../../components';
+import { colors } from '../../utils';
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {

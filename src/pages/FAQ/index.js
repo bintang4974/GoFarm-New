@@ -1,6 +1,6 @@
+import { Box, Center, Heading, Text } from 'native-base';
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { Box, Center, Heading, Text } from 'native-base';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Gap } from '../../components';
 import { colors } from '../../utils';

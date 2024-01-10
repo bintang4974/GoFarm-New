@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { updatePassword, updateProfile } from 'firebase/auth';
+import { doc, getDoc, getFirestore, updateDoc } from 'firebase/firestore';
+import { Box, Button, Image, Input, Text } from 'native-base';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Box, Image, Text, Input, Button } from 'native-base';
-import { colors } from '../../utils';
 import { auth } from '../../config/FIREBASE';
-import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
-import { updateProfile, updatePassword } from 'firebase/auth';
 import { dummyProfile } from '../../data';
+import { colors } from '../../utils';
 
 const EditProfile = ({ navigation }) => {
   const [user, setUser] = useState(null);

@@ -1,4 +1,4 @@
-import { Box, ScrollView, Text } from 'native-base';
+import { Box, ScrollView } from 'native-base';
 import React, { useState } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Header, ListProducts } from '../../components';
@@ -19,15 +19,6 @@ const Search = ({ navigation }) => {
           </ScrollView>
           <Gap height={50} />
         </Box>
-        {/* <Gap height={10} />
-        <Heading fontSize={"2xl"} p={2}>Whislist</Heading>
-        <Gap height={10} />
-        <Box backgroundColor={colors.primary} flex={1} borderTopRadius={14} p={4}>
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <ListProducts product={product} />
-          </ScrollView>
-          <Gap height={50} />
-        </Box> */}
       </Box>
     </SafeAreaView>
   )

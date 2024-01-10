@@ -1,8 +1,7 @@
-import { Text, SafeAreaView, TouchableOpacity } from 'react-native'
-import React from 'react'
 import { Box, Button, HStack, Heading, Image } from 'native-base'
-import { Imam, Payment, centang } from '../../assets'
-import HomeScreen from '../HomeScreen'
+import React from 'react'
+import { SafeAreaView, Text } from 'react-native'
+import { Payment, centang } from '../../assets'
 
 const SuccesCheckout = ({ navigation }) => {
 
