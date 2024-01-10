@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { BottomNavigator } from '../components';
-import { Cart, EditProfile, FAQ, History, HomeScreen, Login, Onboarding, PaymentGateway, ProductDetail, Profile, Register, SplashScreen, SuccesCheckout } from '../pages';
+import { Cart, EditProfile, FAQ, History, HomeScreen, Login, Notifications, Onboarding, PaymentGateway, ProductDetail, Profile, Register, SplashScreen, SuccesCheckout } from '../pages';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -81,6 +81,11 @@ const Router = () => {
                     name="SuccessCheckout"
                     component={SuccesCheckout}
                     options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Notifications"
+                    component={Notifications}
+                    // options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

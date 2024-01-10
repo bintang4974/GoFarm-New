@@ -14,7 +14,9 @@ const Header = ({ navigation }) => {
                 <Heading fontSize={"xl"}>Go Farm</Heading>
             </HStack>
             <HStack space={2}>
-                <Ionicons name="notifications-outline" size={28} />
+                <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
+                    <Ionicons name="notifications-outline" size={28} />
+                </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
                     <Ionicons name="cart-outline" size={28} />
                 </TouchableOpacity>

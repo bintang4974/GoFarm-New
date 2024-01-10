@@ -11,6 +11,7 @@ import FAQ from "./FAQ";
 import Onboarding from "./Onboarding"
 import SuccesCheckout from "./SuccessCheckout";
 import History from './History';
+import Notifications from "./Notifications";
 
 export {
     SplashScreen,
@@ -25,5 +26,6 @@ export {
     FAQ,
     Onboarding,
     SuccesCheckout,
-    History
+    History,
+    Notifications
 };
