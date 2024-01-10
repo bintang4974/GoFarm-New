@@ -1,5 +1,5 @@
 import { NativeBaseProvider } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { LogBox, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './src/redux/store';
 import Router from './src/router';
@@ -21,6 +21,7 @@ export default function App() {
 
   useEffect(() => {
     _retriveData();
+    LogBox.ignoreLogs(['In React 18, SSRProvider is not necessary and is a noop. You can remove it from your app.']);
   }, [])
 
   return (
@@ -31,12 +32,3 @@ export default function App() {
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

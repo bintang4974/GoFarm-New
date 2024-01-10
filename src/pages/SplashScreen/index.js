@@ -14,45 +14,54 @@ const SplashScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <LottieView
-        source={require("../../../assets/thumbs.json")}
-        style={{
-          height: 360,
-          width: 300,
-          alignSelf: "center",
-          marginTop: 40,
-          justifyContent: "center",
-        }}
-        autoPlay
-        loop={false}
-        speed={0.7}
-      />
+    <SafeAreaView style={{flex: 1}}>
+      <Box flex={1} backgroundColor={colors.primary}>
+        <LottieView
+          source={require("../../../assets/thumbs.json")}
+          style={{
+            height: 360,
+            width: 300,
+            alignSelf: "center",
+            marginTop: 40,
+            justifyContent: "center",
+          }}
+          autoPlay
+          loop={false}
+          speed={0.7}
+        />
 
-      <Text
-        style={{
-          marginTop: 40,
-          fontSize: 19,
-          fontWeight: "600",
-          textAlign: "center",
-        }}
-      >
-        SELAMAT DATANG DI GOFARM
-      </Text>
+        <Text
+          style={{
+            marginTop: 60,
+            fontSize: 19,
+            fontWeight: "600",
+            textAlign: "center",
+            color: "white"
+          }}
+        >
+          SELAMAT DATANG DI GOFARM
+        </Text>
 
-      <LottieView
-        source={require("../../../assets/thumbs.json")}
-        style={{
-          height: 300,
-          position: "absolute",
-          top: 100,
-          width: 300,
-          alignSelf: "center",
-        }}
-        autoPlay
-        loop={false}
-        speed={0.7}
-      />
+        <LottieView
+          source={require("../../../assets/thumbs.json")}
+          style={{
+            height: 300,
+            position: "absolute",
+            top: 100,
+            width: 300,
+            alignSelf: "center",
+          }}
+          autoPlay
+          loop={false}
+          speed={0.7}
+        />
+        <Gap height={21} />
+        <Box alignItems={"center"}>
+          <Box backgroundColor={colors.white} borderRadius={180 / 2} overflow={"hidden"} shadow={5} p={5} width={150}>
+            <Image source={Logo} alt='logo' width={100} height={100} />
+          </Box>
+        </Box>
+      </Box>
     </SafeAreaView>
     // <SafeAreaView flex={1}>
     //   <Center flex={1} backgroundColor={colors.primary}>
