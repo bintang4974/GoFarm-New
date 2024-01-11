@@ -1,7 +1,7 @@
 import { Box, Button, HStack, Heading, Image } from 'native-base'
 import React from 'react'
 import { SafeAreaView, Text } from 'react-native'
-import { Payment, centang } from '../../assets'
+import { Checklist, Payment, centang } from '../../assets'
 
 const SuccesCheckout = ({ navigation }) => {
 
@@ -17,9 +17,9 @@ const SuccesCheckout = ({ navigation }) => {
                 <Heading fontSize={'md'}>Pembayaran Anda Berhasil!</Heading>
             </HStack>
             <Box p={2} alignItems={"center"} fontSize={'sm'}>
-                <Image source={centang}
-                    height={20}
-                    width={70}
+                <Image source={Checklist}
+                    height={100}
+                    width={100}
                     alt='centang' />
                 <Text></Text>
                 <Text fontStyle={'sm'} >Terimakasih telah menggunakan GoFarm App</Text>
