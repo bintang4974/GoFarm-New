@@ -22,7 +22,7 @@ const FAQ = ({ navigation }) => {
   ];
 
   const handleBackPress = () => {
-    navigation.navigate('MainApp');
+    navigation.navigate('Profile');
   };
 
   return (
@@ -31,7 +31,7 @@ const FAQ = ({ navigation }) => {
         <Center>
           <Box width='80%' p={4} borderWidth={1} borderRadius={8} borderColor={colors.primary} shadow={2}>
             {faqData.map((item, index) => (
-              <Box key={index} mb={4}>
+              <Box key={index} >
                 <Heading size="md" mb={2}>
                   {item.question}
                 </Heading>
@@ -54,6 +54,7 @@ const FAQ = ({ navigation }) => {
           />
           {/* Additional buttons or components */}
         </Box>
+        <Gap height={30} />
       </ScrollView>
     </SafeAreaView>
   );
