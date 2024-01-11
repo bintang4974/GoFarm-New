@@ -21,7 +21,7 @@ const MainApp = () => {
 const Router = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='SuccessCheckout'>
+            <Stack.Navigator initialRouteName='Splash'>
                 <Stack.Screen
                     name="Login"
                     component={Login}

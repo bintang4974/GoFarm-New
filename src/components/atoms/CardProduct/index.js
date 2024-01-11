@@ -8,7 +8,7 @@ const CardProduct = ({ product, navigation }) => {
     return (
         <Box mx={4} my={5} shadow={6}>
             <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ProductDetail', { product })}>
-                <Image source={{ uri: product.image }} alt='image' width={140} height={144} />
+                <Image source={{ uri: product.image }} alt='image' width={130} height={144} />
                 <Box backgroundColor={"#67D490"} p={2}>
                     <Heading color={colors.white} fontSize={"lg"} textTransform={"capitalize"}>{product.name}</Heading>
                     <HStack space={2} justifyContent={"space-between"}>

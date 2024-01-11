@@ -26,37 +26,35 @@ const FAQ = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView>
-        <Center>
-          <Box width='80%' p={4} borderWidth={1} borderRadius={8} borderColor={colors.primary} shadow={2}>
-            {faqData.map((item, index) => (
-              <Box key={index} >
-                <Heading size="md" mb={2}>
-                  {item.question}
-                </Heading>
-                <Text>{item.answer}</Text>
-              </Box>
-            ))}
-          </Box>
-        </Center>
-        <Gap height={10} />
-        <Box mx={10} shadow={5}>
-          <Button
-            type="textIcon"
-            title="Back"
-            icon="back"
-            padding={15}
-            fontSize={18}
-            backgroundColor={colors.primary}
-            fontColor={colors.white}
-            onPress={handleBackPress}
-          />
-          {/* Additional buttons or components */}
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <Center mt={5}>
+        <Box width='80%' p={4} borderWidth={1} borderRadius={8} borderColor={colors.primary} shadow={2}>
+          {faqData.map((item, index) => (
+            <Box key={index} >
+              <Heading size="md" mb={2}>
+                {item.question}
+              </Heading>
+              <Text>{item.answer}</Text>
+            </Box>
+          ))}
         </Box>
-        <Gap height={30} />
-      </ScrollView>
-    </SafeAreaView>
+      </Center>
+      <Gap height={10} />
+      <Box mx={10} shadow={5}>
+        <Button
+          type="textIcon"
+          title="Back"
+          icon="back"
+          padding={15}
+          fontSize={18}
+          backgroundColor={colors.primary}
+          fontColor={colors.white}
+          onPress={handleBackPress}
+        />
+        {/* Additional buttons or components */}
+      </Box>
+      <Gap height={30} />
+    </ScrollView>
   );
 };
 

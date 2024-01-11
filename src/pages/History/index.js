@@ -1,6 +1,6 @@
 import { getAuth } from 'firebase/auth';
 import { doc, onSnapshot } from 'firebase/firestore';
-import { Box, Center, Text } from 'native-base';
+import { Box, Center, ScrollView, Text } from 'native-base';
 import React, { useEffect, useState } from 'react';
 import { db } from '../../config/FIREBASE';
 import { dummyOrder } from '../../data';
@@ -39,15 +39,17 @@ const History = () => {
                 <Center>Anda belum melakukan transaksi apapun!</Center>
             ) : (
                 <Box backgroundColor={colors.white} flex={1}>
-                    <Box backgroundColor={colors.white} shadow={5} padding={5} borderRadius={10} margin={5}>
-                        {history.map((item, index) => (
-                            <Box key={index} borderBottomWidth={1} p={2}>
-                                <Text>Order ID: {item.order_id}</Text>
-                                <Text>Order ID: {item.orders[0].name}</Text>
-                                <Text>Status: {item.status}</Text>
-                            </Box>
-                        ))}
-                    </Box>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <Box backgroundColor={colors.white} shadow={5} padding={5} borderRadius={10} margin={5}>
+                            {history.map((item, index) => (
+                                <Box key={index} borderBottomWidth={1} p={2}>
+                                    <Text>Order ID: {item.order_id}</Text>
+                                    <Text>Order ID: {item.orders[0].name}</Text>
+                                    <Text>Status: {item.status}</Text>
+                                </Box>
+                            ))}
+                        </Box>
+                    </ScrollView>
                 </Box>
 
             )}

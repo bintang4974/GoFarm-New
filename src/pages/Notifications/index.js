@@ -25,20 +25,18 @@ const Notifications = () => {
   ];
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView>
-        <Center p={5}>
-          {notificationsData.map((item, index) => (
-            <Box key={index} width='80%' p={4} my={2} borderWidth={1} borderRadius={8} borderColor={colors.primary} shadow={2}>
-              <Heading size="md">
-                {item.question}
-              </Heading>
-            </Box>
-          ))}
-        </Center>
-        <Gap height={10} />
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <Center p={5}>
+        {notificationsData.map((item, index) => (
+          <Box key={index} width='80%' p={4} my={2} borderWidth={1} borderRadius={8} borderColor={colors.primary} shadow={2}>
+            <Heading size="md">
+              {item.question}
+            </Heading>
+          </Box>
+        ))}
+      </Center>
+      <Gap height={10} />
+    </ScrollView>
   );
 };
 
